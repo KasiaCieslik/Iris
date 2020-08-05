@@ -1,0 +1,21 @@
+,,0
+DaysBetween,AppointmentID,0.77183048109174
+AppointmentID,DaysBetween,0.77183048109174
+Hipertension,Age,0.5046618641186292
+Age,Hipertension,0.5046618641186292
+Hipertension,Diabetes,0.4330856417720079
+Diabetes,Hipertension,0.4330856417720079
+SMS_received,DaysBetween,0.3981454850888848
+DaysBetween,SMS_received,0.3981454850888848
+Age,Diabetes,0.2924532858931884
+Diabetes,Age,0.2924532858931884
+AppointmentID,SMS_received,0.2566184488031247
+SMS_received,AppointmentID,0.2566184488031247
+DaysBetween,No-show,0.18623082164147925
+No-show,DaysBetween,0.18623082164147925
+No-show,AppointmentID,0.1626021249284354
+AppointmentID,No-show,0.1626021249284354
+Neighbourhood_JARDIM CAMBURI,DaysBetween,0.15405026431392138
+DaysBetween,Neighbourhood_JARDIM CAMBURI,0.15405026431392138
+SMS_received,No-show,0.12643065757293445
+No-show,SMS_received,0.12643065757293445
