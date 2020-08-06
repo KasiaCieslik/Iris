@@ -9,13 +9,13 @@ SMS_received,DaysBetween,0.3981454850888848
 DaysBetween,SMS_received,0.3981454850888848
 Age,Diabetes,0.2924532858931884
 Diabetes,Age,0.2924532858931884
-AppointmentID,SMS_received,0.2566184488031247
 SMS_received,AppointmentID,0.2566184488031247
+AppointmentID,SMS_received,0.2566184488031247
+Alcoholism,sum_appoitments,0.1866492259769806
+sum_appoitments,Alcoholism,0.1866492259769806
 DaysBetween,No-show,0.18623082164147925
 No-show,DaysBetween,0.18623082164147925
+sum_appoitments,sum_app_for_age,0.18226176898161153
+sum_app_for_age,sum_appoitments,0.18226176898161153
 No-show,AppointmentID,0.1626021249284354
 AppointmentID,No-show,0.1626021249284354
-Neighbourhood_JARDIM CAMBURI,DaysBetween,0.15405026431392138
-DaysBetween,Neighbourhood_JARDIM CAMBURI,0.15405026431392138
-SMS_received,No-show,0.12643065757293445
-No-show,SMS_received,0.12643065757293445

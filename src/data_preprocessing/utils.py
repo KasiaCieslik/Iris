@@ -2,7 +2,8 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
 import pandas as pd
 
-
+# categorical 
+### binary string to binary number
 class string_to_binary(BaseEstimator,TransformerMixin):
     def __init__(self):
         pass 
@@ -49,6 +50,7 @@ class get_dummies(BaseEstimator,TransformerMixin):
     
 #class for numerical pipeline
 class smaller_age_range(BaseEstimator,TransformerMixin):
+    #age_range = ['Age']
     def __init__(self,age_range):
         self.age_range = age_range
     def fit(self,X,y=None):
@@ -59,14 +61,35 @@ class smaller_age_range(BaseEstimator,TransformerMixin):
             X[col][X[col]>95]=95
         return X
 
+class drop_NaN(BaseEstimator,TransformerMixin):
+    def __init__(self):
+        pass
+    def fit(self,X,y=None):
+        return self
+    def transform(self,X,y=None):
+        return pd.DataFrame(X).dropna()
+    
+class drop_datetime(BaseEstimator,TransformerMixin):
+    def __init__(self,drop_date_time):
+        self.drop_date_time = drop_date_time
+        pass
+    def fit(self,X,y=None):
+        return self
+    def transform(self,X,y=None):
+        for columns in self.drop_date_time:
+            X = X.drop(columns,axis=1)
+        return X
+
 def preprocess_categorical_to_binary(df):
     #categorical pipeline
+    drop_date_time =  ['ScheduledDay','AppointmentDay']  
     obj_date_to_dt=['ScheduledDay','AppointmentDay']
     cat_pipeline = Pipeline([
-        ('string_to_binary',string_to_binary()),
-        ('object_to_datatime',object_to_datatime(obj_date_to_dt)),
-        ('get_dummies',get_dummies())
-    ])
+    ('StringToBinary',string_to_binary()),
+    ('ObjectToDataTime',object_to_datatime(obj_date_to_dt)),
+    ('DropDateTime',drop_datetime(drop_date_time)),
+    #('GetDummies',get_dummies())
+])
     df = cat_pipeline.transform(df)
     return df
 
@@ -78,3 +101,4 @@ def change_age_range(df):
     ])
     df = pipeline_num.transform(df)
     return df
+
